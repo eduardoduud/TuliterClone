@@ -4,6 +4,7 @@ import Input from "../Input";
 import Modal from "../Modal";
 import useRegisterModal from "@/hooks/useRegisterModal";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const RegisterModal = () => {
     const LoginModal = useLoginModal();
@@ -34,14 +35,17 @@ const RegisterModal = () => {
                 username,
                 name
             })
+
+            toast.success('Account created.');
             
             RegisterModal.onClose();
         } catch (error) {
             console.log(error);
+            toast.error('Something went wrong');
         } finally {
             setIsLoading(false);
         }
-    }, [RegisterModal]);
+    }, [RegisterModal, email, password, username, name]);
 
     const bodyContent = (
         <div className="flex flex-col gap-4">
