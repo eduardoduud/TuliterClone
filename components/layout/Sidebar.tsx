@@ -51,6 +51,7 @@ const Sidebar = () => {
         {
             label: 'Logout',
             icon: BiLogOut,
+            onClick: signOut
         }
     ]
 
@@ -78,6 +79,7 @@ const Sidebar = () => {
                         href={item.href}
                         label={item.label}
                         icon={item.icon}
+                        onClick={item.onClick}
                         />
                     ))}
                     {!currentUser && itemsUnsigned.map((item) => (

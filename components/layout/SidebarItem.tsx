@@ -1,5 +1,3 @@
-import useCurrentUser from "@/hooks/useCurrentUser";
-
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { IconType } from "react-icons";
@@ -17,22 +15,17 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     href,
     icon: Icon,
     onClick,
-    auth
 }) => {
-    const { data: currentUser } = useCurrentUser();
     const router = useRouter();
     const handleClick = useCallback(() => {
         if (onClick) {
             return onClick();
         }
         
-        if (auth && !currentUser) {
-
-        }
         if (href) {
             router.push(href);
         }
-    }, [onClick, router, href, auth, currentUser]);
+    }, [onClick, router, href]);
 
     return ( 
         <div onClick={handleClick} className="flex flex-row items-center">
