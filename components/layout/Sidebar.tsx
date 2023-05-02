@@ -1,58 +1,78 @@
 import { BsBellFill, BsHouseFill, BsBookmarkDash, BsThreeDots } from 'react-icons/bs'
 import { FaUser } from 'react-icons/fa'
-import { FiMail } from 'react-icons/fi'
+import { FiMail, FiSettings } from 'react-icons/fi'
 import { BiHash, BiLogOut } from 'react-icons/bi'
+import { signOut } from 'next-auth/react';
+
 import SidebarLogo from './SidebarLogo';
 import SidebarItem from './SidebarItem';
 import SidebarTweetButton from './SidebarTweetButton';
 
 import useCurrentUser from '@/hooks/useCurrentUser';
-import { signOut } from 'next-auth/react';
+
 
 const Sidebar = () => {
     const { data: currentUser } = useCurrentUser();
-    const items = [
+    const itemsSigned = [
         {
             label: 'Home',
             href: '/',
-            icon: BsHouseFill
+            icon: BsHouseFill,
         },
         {
             label: 'Explore',
             href: '/explore',
-            icon: BiHash
+            icon: BiHash,
         },
         {
             label: 'Notifications',
             href: '/notifications',
-            icon: BsBellFill
+            icon: BsBellFill,
         },
         {
             label: 'Messages',
             href: '/messages',
-            icon: FiMail
+            icon: FiMail,
         },
         {
             label: 'Bookmarks',
             href: '/bookmarks',
-            icon: BsBookmarkDash
+            icon: BsBookmarkDash,
         },
         {
             label: 'Profile',
             href: '/users/123',
-            icon: FaUser
+            icon: FaUser,
         },
         {
             label: 'More',
-            icon: BsThreeDots
+            icon: BsThreeDots,
+        },
+        {
+            label: 'Logout',
+            icon: BiLogOut,
         }
     ]
+
+    const itemsUnsigned = [
+        {
+            label: 'Explore',
+            href: '/explore',
+            icon: BiHash,
+        },
+        {
+            label: 'Settings',
+            href: '/settings',
+            icon: FiSettings,
+        },
+    ]
+
     return ( 
         <div className='col-span-1 h-full pr-4 md:pr-6'>
             <div className='flex flex-col items-end'>
                 <div className='space-y-2 lg:w-[230px]'>
                     <SidebarLogo />
-                    {items.map((item) => (
+                    {currentUser && itemsSigned.map((item) => (
                         <SidebarItem 
                         key={item.href}
                         href={item.href}
@@ -60,9 +80,14 @@ const Sidebar = () => {
                         icon={item.icon}
                         />
                     ))}
-                    {currentUser && (
-                        <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Logout"/>
-                    )}
+                    {!currentUser && itemsUnsigned.map((item) => (
+                        <SidebarItem 
+                        key={item.href}
+                        href={item.href}
+                        label={item.label}
+                        icon={item.icon}
+                        />
+                    ))}
                     <SidebarTweetButton />
                 </div>
             </div>
