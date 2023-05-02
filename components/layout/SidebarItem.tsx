@@ -41,7 +41,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                     p-4
                     hover:bg-slate-300
                     hover:bg-opacity-10
-                    cursos-pointer
+                    cursor-pointer
                     lg:hidden
                 "
             >
@@ -59,7 +59,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                     rounded-full
                     hover:bg-slate-300
                     hover:bg-opacity-10
-                    cursos-pointer
+                    cursor-pointer
                 "
             >
                 <Icon size={24} color="white" />
