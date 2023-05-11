@@ -12,7 +12,7 @@ export default async function handler(
     }
 
     try {
-        const { userId } = req.body;
+        const userId = req.method === 'POST' ? req.body.userId : req.query.userId;
 
         const { currentUser } = await serverAuth(req, res);
 
@@ -32,12 +32,12 @@ export default async function handler(
 
         let updatedFollowingIds = [ ... (user.followingIds || [])];
 
-        if (req.method == 'POST') {
+        if (req.method === 'POST') {
             updatedFollowingIds.push(userId);
         }
 
-        if (req.method == 'DELETE') {
-            updatedFollowingIds = updatedFollowingIds.filter(followingId => followingId !== userId);
+        if (req.method === 'DELETE') {
+            updatedFollowingIds = updatedFollowingIds.filter((followingId) => followingId !== userId);
         }
 
         const updatedUser = await prisma.user.update({
