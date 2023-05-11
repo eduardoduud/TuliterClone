@@ -28,6 +28,7 @@ const Sidebar = () => {
             label: 'Notifications',
             href: '/notifications',
             icon: BsBellFill,
+            alert: currentUser?.hasNotification,
         },
         {
             label: 'Messages',
@@ -80,6 +81,7 @@ const Sidebar = () => {
                         label={item.label}
                         icon={item.icon}
                         onClick={item.onClick}
+                        alert={item.alert}
                         />
                     ))}
                     {!currentUser && itemsUnsigned.map((item) => (
