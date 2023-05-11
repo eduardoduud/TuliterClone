@@ -10,6 +10,7 @@ import useRegisterModal from "@/hooks/useRegisterModal";
 import { useCallback, useState } from "react";
 import { mutate } from "swr";
 import Avatar from "./Avatar";
+import usePost from "@/hooks/usePost";
 
 interface FormProps {
     placeholder: string;
@@ -27,6 +28,7 @@ const Form: React.FC<FormProps> = ({
 
     const { data: currentUser } = useCurrentUser();
     const { mutate: mutatePosts } = usePosts();
+    const { mutate: mutatePost } = usePost(postId as string);
 
     const [body, setBody] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -43,12 +45,13 @@ const Form: React.FC<FormProps> = ({
 
             setBody('');
             mutatePosts();
+            mutatePost();
         } catch {
             toast.error('Something went wrong');
         } finally {
             setIsLoading(false);
         }
-    }, [body, mutatePosts, isComment, postId]);
+    }, [body, mutatePosts, isComment, postId, mutatePost]);
 
     return ( 
         <div className="border-b-[1px] border-neutral-800 px-5 py-2">
