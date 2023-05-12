@@ -15,41 +15,49 @@ const Sidebar = () => {
     const { data: currentUser } = useCurrentUser();
     const itemsSigned = [
         {
+            key: 0,
             label: 'Home',
             href: '/',
             icon: BsHouseFill,
         },
         {
+            key: 1,
             label: 'Explore',
             href: '/explore',
             icon: BiHash,
         },
         {
+            key: 2,
             label: 'Notifications',
             href: '/notifications',
             icon: BsBellFill,
             alert: currentUser?.hasNotification,
         },
         {
+            key: 3,
             label: 'Messages',
             href: '/messages',
             icon: FiMail,
         },
         {
+            key: 4,
             label: 'Bookmarks',
             href: '/bookmarks',
             icon: BsBookmarkDash,
         },
         {
+            key: 5,
             label: 'Profile',
             href: `/users/${currentUser?.id}`,
             icon: FaUser,
         },
         {
+            key: 6,
             label: 'More',
             icon: BsThreeDots,
         },
         {
+            key: 7,
             label: 'Logout',
             icon: BiLogOut,
             onClick: signOut
@@ -58,11 +66,13 @@ const Sidebar = () => {
 
     const itemsUnsigned = [
         {
+            key: 0,
             label: 'Explore',
             href: '/explore',
             icon: BiHash,
         },
         {
+            key: 1,
             label: 'Settings',
             href: '/settings',
             icon: FiSettings,
@@ -76,7 +86,7 @@ const Sidebar = () => {
                     <SidebarLogo />
                     {currentUser && itemsSigned.map((item) => (
                         <SidebarItem 
-                        key={item.href}
+                        key={item.key}
                         href={item.href}
                         label={item.label}
                         icon={item.icon}
@@ -86,7 +96,7 @@ const Sidebar = () => {
                     ))}
                     {!currentUser && itemsUnsigned.map((item) => (
                         <SidebarItem 
-                        key={item.href}
+                        key={item.key}
                         href={item.href}
                         label={item.label}
                         icon={item.icon}
