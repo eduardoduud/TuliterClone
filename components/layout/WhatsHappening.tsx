@@ -22,7 +22,6 @@ const WhatsHappening = () => {
                                 text-white 
                                 font-semibold
                                 text-sm
-                                flex-wrap
                                 ">
                                 {user.name}
                             </p>
