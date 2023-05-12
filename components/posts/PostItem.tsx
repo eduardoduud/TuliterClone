@@ -67,7 +67,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
         >
             <div className="flex flex-row items-start gap-3">
                 <Avatar userId={data.user.id}/>
-                <div>
+                <div className="">
                     <div className="flex flex-row items-center gap-2">
                         <p 
                             onClick={goToUser}
@@ -82,9 +82,9 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                             {createdAt} ago
                         </span>
                     </div>
-                    <div className="text-white mt-1">
+                    <span className="text-white mt-1 break-all">
                         {data.body}
-                    </div>
+                    </span>
                     <div className="flex flex-row items-center mt-3 gap-10">
                         <div 
                             className="
