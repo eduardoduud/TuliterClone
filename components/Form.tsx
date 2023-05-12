@@ -62,6 +62,7 @@ const Form: React.FC<FormProps> = ({
                     </div>
                     <div className="w-full">
                         <textarea
+                            maxLength={300}
                             disabled={isLoading}
                             onChange={(e) => setBody(e.target.value)}
                             value={body}
@@ -114,4 +115,4 @@ const Form: React.FC<FormProps> = ({
      );
 }
  
-export default Form
+export default Form;
