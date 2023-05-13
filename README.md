@@ -1,3 +1,25 @@
+# Build and Deploy: Twitter clone with React, Tailwind, Next, Prisma, Mongo, NextAuth & Vercel
+
+![Fullstack](https://i.imgur.com/AmYBbe9.png)
+![Fullstack](https://i.imgur.com/DCgLFKo.png)
+
+
+## Functionalities
+- Authentication system
+- Notification system
+- Image Upload using Base64 strings
+- Prisma ORM with MongoDB
+- Responsive Layout
+- 1 To Many Relations (User - Post)
+- Many To Many Relations (Post - Comment)
+- Following functionality
+- Comments / Replies
+- Likes functionality
+- Vercel Deployment
+
+I modified some things and fixed a couple of bugs<br>
+Original code creator https://github.com/AntonioErdeljac
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
