@@ -17,7 +17,7 @@
 - Likes functionality
 - Vercel Deployment
 
-I modified some things and fixed a couple of bugs
+I modified some things and fixed a couple of bugs<br>
 Original code creator https://github.com/AntonioErdeljac
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
