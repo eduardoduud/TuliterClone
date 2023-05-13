@@ -32,6 +32,22 @@ const RegisterModal = () => {
         try {
             setIsLoading(true);
 
+            if (name.length > 20) {
+                toast.error('Name must be 20 characters or less.');
+                throw new Error('');
+            }
+    
+            if (username.length > 10) {
+                toast.error('Username must be 10 characters or less.');
+                throw new Error('');
+            }
+
+            const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!emailRegex.test(email)) {
+                toast.error('Invalid e-mail address');
+                throw new Error('');
+            }
+
             await axios.post('/api/register', {
                 email,
                 password,
@@ -49,7 +65,6 @@ const RegisterModal = () => {
             RegisterModal.onClose();
         } catch (error) {
             console.log(error);
-            toast.error('Something went wrong');
         } finally {
             setIsLoading(false);
         }
@@ -70,13 +85,13 @@ const RegisterModal = () => {
                 disabled={isLoading}
             />
             <Input 
-                placeholder="Email"
+                placeholder="DO NOT USE A REAL E-MAIL"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 disabled={isLoading}
             />
             <Input 
-                placeholder="Password"
+                placeholder="DO NOT USE A REAL PASSWORD"
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}

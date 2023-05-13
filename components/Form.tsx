@@ -103,8 +103,11 @@ const Form: React.FC<FormProps> = ({
             ) : (
             <div className="py-8">
                 <h1 className="text-white text-2xl text-center mb-4 font-bold">
-                   Welcome to Tuliter
+                   Welcome to Tuliter!
                 </h1>
+                <p className="text-red-500 text-1xl text-center mb-4 font-semibold">
+                    This site is an educational project and is not intended for real usage
+                </p>
                 <div className="flex flex-row items-center justify-center gap-4">
                     <Button label='Login' onClick={loginModal.onOpen}/>
                     <Button label='Register' onClick={registerModal.onOpen} secondary/>
