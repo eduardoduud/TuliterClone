@@ -23,7 +23,7 @@ const Sidebar = () => {
         {
             key: 1,
             label: 'Explore',
-            href: '/explore',
+            href: '/',
             icon: BiHash,
         },
         {
@@ -36,13 +36,13 @@ const Sidebar = () => {
         {
             key: 3,
             label: 'Messages',
-            href: '/messages',
+            href: '/',
             icon: FiMail,
         },
         {
             key: 4,
             label: 'Bookmarks',
-            href: '/bookmarks',
+            href: '/',
             icon: BsBookmarkDash,
         },
         {
@@ -68,13 +68,13 @@ const Sidebar = () => {
         {
             key: 0,
             label: 'Explore',
-            href: '/explore',
+            href: '/',
             icon: BiHash,
         },
         {
             key: 1,
             label: 'Settings',
-            href: '/settings',
+            href: '/',
             icon: FiSettings,
         },
     ]
