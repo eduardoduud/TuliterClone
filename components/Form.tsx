@@ -6,11 +6,10 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
 import usePosts from "@/hooks/usePosts";
 import useRegisterModal from "@/hooks/useRegisterModal";
-
-import { useCallback, useState } from "react";
-import { mutate } from "swr";
 import Avatar from "./Avatar";
 import usePost from "@/hooks/usePost";
+
+import { useCallback, useState } from "react";
 
 interface FormProps {
     placeholder: string;

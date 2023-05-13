@@ -1,7 +1,6 @@
-import Image from 'next/image';
-
 import useUser from '@/hooks/useUser';
 
+import Image from 'next/image';
 import Avatar from '../Avatar';
 
 interface UserHeroProps {

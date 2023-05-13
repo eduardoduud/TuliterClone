@@ -1,8 +1,8 @@
 import { formatDistanceToNowStrict } from "date-fns";
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
+
 import Avatar from "../Avatar";
-import { create } from "domain";
 
 interface CommentItemProps {
     data: Record<string, any>

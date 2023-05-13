@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { BsTwitter } from "react-icons/bs";
-import { mutate } from "swr";
 
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useNotifications from "@/hooks/useNotifications";

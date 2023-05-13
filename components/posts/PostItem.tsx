@@ -1,10 +1,10 @@
-import useCurrentUser from "@/hooks/useCurrentUser";
-import useLoginModal from "@/hooks/useLoginModal";
-
 import { formatDistanceToNowStrict } from "date-fns";
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
 import { AiOutlineHeart, AiFillHeart, AiOutlineMessage } from "react-icons/ai";
+
+import useCurrentUser from "@/hooks/useCurrentUser";
+import useLoginModal from "@/hooks/useLoginModal";
 
 import Avatar from "../Avatar";
 import useLike from "@/hooks/useLike";
